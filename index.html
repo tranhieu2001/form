@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="main">
+
+        <form action="" method="POST" class="form" id="registerForm">
+
+            <h3 class="heading">Đăng ký</h3>
+            <p class="desc">LÀM THÀNH VIÊN RẠP XIẾC TRUNG ƯƠNG</p>
+
+            <div class="spacer"></div>
+
+            <div class="form-group">
+                <label for="fullname" class="form-label">Tên đầy đủ</label>
+                <input id="fullname" rules="required" type="text" name="fullname" type="text"
+                    placeholder="VD: Trần Hiếu" class="form-control">
+                <span class="form-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input id="email" rules="required|email" name="email" type="text" placeholder="VD: email@domain.com"
+                    class="form-control">
+                <span class="form-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="form-label">Mật khẩu</label>
+                <input id="password" rules="required|min:6" name="password" type="password" placeholder="Nhập mật khẩu"
+                    class="form-control">
+                <span class="form-message"></span>
+            </div>
+
+            <button class="form-submit">Đăng ký</button>
+        </form>
+
+    </div>
+
+    <script src="./main.js"></script>
+    <script>
+
+        var form = new Validator('#registerForm')
+        form.onSubmit = function (formData) {
+            console.log(formData)
+        }
+    </script>
+</body>
+
+</html>
